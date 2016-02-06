@@ -25,10 +25,6 @@ def explore_city_data(city_data):
     housing_prices = city_data.target
     housing_features = city_data.data
 
-    ###################################
-    ### Step 1. YOUR CODE GOES HERE ###
-    ###################################
-
     # Please calculate the following values using the Numpy library
     # Size of data (number of houses)?
     number_of_houses = len(housing_prices)

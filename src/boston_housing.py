@@ -40,7 +40,11 @@ def explore_city_data(city_data):
     minimum_price = min(housing_prices)
     print "Minimum price: %.1f" % minimum_price
     # Maximum price?
+    maximum_price = max(housing_prices)
+    print "Maximum price: %.1f" % maximum_price
     # Calculate mean price?
+    mean_price = np.mean(housing_prices)
+    print "Mean price: %.1f" % mean_price
     # Calculate median price?
     # Calculate standard deviation?
 

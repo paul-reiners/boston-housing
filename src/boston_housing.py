@@ -46,6 +46,8 @@ def explore_city_data(city_data):
     mean_price = np.mean(housing_prices)
     print "Mean price: %.1f" % mean_price
     # Calculate median price?
+    median_price = np.median(housing_prices)
+    print "Median price: %.1f" % median_price
     # Calculate standard deviation?
 
 

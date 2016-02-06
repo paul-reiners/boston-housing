@@ -34,6 +34,8 @@ def explore_city_data(city_data):
     number_of_houses = len(housing_prices)
     print "Size of data (number of houses): %d" % number_of_houses
     # Number of features?
+    number_of_features = len(housing_features[0])
+    print "Number of features: %d" % number_of_features
     # Minimum price?
     # Maximum price?
     # Calculate mean price?

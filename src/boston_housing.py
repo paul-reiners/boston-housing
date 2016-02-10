@@ -9,7 +9,7 @@ from sklearn.tree import DecisionTreeRegressor
 ################################
 ### ADD EXTRA LIBRARIES HERE ###
 ################################
-
+from sklearn.cross_validation import train_test_split
 
 def load_data():
     """Load the Boston dataset."""
@@ -55,9 +55,7 @@ def split_data(city_data):
     # Get the features and labels from the Boston housing data
     X, y = city_data.data, city_data.target
 
-    ###################################
-    ### Step 2. YOUR CODE GOES HERE ###
-    ###################################
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
     return X_train, y_train, X_test, y_test
 

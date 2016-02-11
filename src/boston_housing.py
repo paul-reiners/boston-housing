@@ -10,6 +10,7 @@ from sklearn.tree import DecisionTreeRegressor
 ### ADD EXTRA LIBRARIES HERE ###
 ################################
 from sklearn.cross_validation import train_test_split
+from sklearn import metrics
 
 def load_data():
     """Load the Boston dataset."""
@@ -63,13 +64,9 @@ def split_data(city_data):
 def performance_metric(label, prediction):
     """Calculate and return the appropriate error performance metric."""
 
-    ###################################
-    ### Step 3. YOUR CODE GOES HERE ###
-    ###################################
-
     # The following page has a table of scoring functions in sklearn:
     # http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics
-    pass
+    return metrics.mean_absolute_error(label, prediction)
 
 
 def learning_curve(depth, X_train, y_train, X_test, y_test):

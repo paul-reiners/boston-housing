@@ -11,6 +11,7 @@ from sklearn.tree import DecisionTreeRegressor
 ################################
 from sklearn.cross_validation import train_test_split
 from sklearn import metrics
+from sklearn.metrics import make_scorer
 
 def load_data():
     """Load the Boston dataset."""
@@ -166,6 +167,7 @@ def fit_predict_model(city_data):
     # 1. Find an appropriate performance metric. This should be the same as the
     # one used in your performance_metric procedure above:
     # http://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html
+    mean_absolute_error_scorer = make_scorer(metrics.mean_absolute_error)
 
     # 2. We will use grid search to fine tune the Decision Tree Regressor and
     # obtain the parameters that generate the best training performance. Set up

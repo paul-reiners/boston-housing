@@ -6,12 +6,10 @@ import pylab as pl
 from sklearn import datasets
 from sklearn.tree import DecisionTreeRegressor
 
-################################
-### ADD EXTRA LIBRARIES HERE ###
-################################
 from sklearn.cross_validation import train_test_split
 from sklearn import metrics
 from sklearn.metrics import make_scorer
+from sklearn import grid_search
 
 def load_data():
     """Load the Boston dataset."""
@@ -160,10 +158,6 @@ def fit_predict_model(city_data):
 
     parameters = {'max_depth':(1,2,3,4,5,6,7,8,9,10)}
 
-    ###################################
-    ### Step 4. YOUR CODE GOES HERE ###
-    ###################################
-
     # 1. Find an appropriate performance metric. This should be the same as the
     # one used in your performance_metric procedure above:
     # http://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html
@@ -173,7 +167,8 @@ def fit_predict_model(city_data):
     # obtain the parameters that generate the best training performance. Set up
     # the grid search object here.
     # http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV
-
+    reg = grid_search.GridSearchCV(regressor, parameters, scoring=mean_absolute_error_scorer)
+    
     # Fit the learner to the training data to obtain the best parameter set
     print "Final Model: "
     print reg.fit(X, y)

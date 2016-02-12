@@ -18,6 +18,7 @@
 ## 2) Evaluating Model Performance
 
 * Which measure of model performance is best to use for predicting Boston housing data and analyzing the errors? Why do you think this measurement most appropriate? Why might the other measurements not be appropriate here?
+    - I ended up using mean\_absolute\_error to measure my model performance.  I'm not certain that it is the absolute best measure I could use, but I believe it works well.  I needed to use a regression metric, since the housing prices are continuous.  I could not have used, for example, a classification metric.  The mean\_squared\_error regression metric would have worked just as well.  If there were outliers, perhaps median\_absolute\_error would have worked best.
 * Why is it important to split the Boston housing data into training and testing data? What happens if you do not do this?
 * What does grid search do and why might you want to use it?
 * Why is cross validation useful and why might we use it with grid search?

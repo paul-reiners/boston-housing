@@ -22,7 +22,9 @@
 * Why is it important to split the Boston housing data into training and testing data? What happens if you do not do this?
     - You cannot evaluate performance by how the model does on training data.  If you did so, the model could just 'hard-code' the expected value for a given data point.  This would amount to overfitting.
 * What does grid search do and why might you want to use it?
+    - Grid search automatically fine-tunes parameters with cross-validation.  Thus you can improve your model greatly with only a few extra lines of code.
 * Why is cross validation useful and why might we use it with grid search?
+    - Cross validation is useful because it lets you use all of your data for both testing and training.  Grid search will include cross validation.
 
 ## 3) Analyzing Model Performance
 

@@ -41,3 +41,4 @@
 * Model makes predicted housing price with detailed model parameters (max depth) reported using grid search. Note due to the small randomization of the code it is recommended to run the program several times to identify the most common/reasonable price/model complexity.
     - Prediction: [ 19.93372093]
 * Compare prediction to earlier statistics and make a case if you think it is a valid model.
+    - As a sanity check, the prediction is close to both the mean and median Boston housing prices.  Given that the out-of-sample test error rate is low, I believe we can conclude that this is a valid model.

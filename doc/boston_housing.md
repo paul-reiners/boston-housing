@@ -29,6 +29,7 @@
 ## 3) Analyzing Model Performance
 
 * Look at all learning curve graphs provided. What is the general trend of training and testing error as training size increases?
+    - In general, as training size increases, training error increases and testing error decreases.  They both approach the same horizontal asymptote with training error approaching the asymptote from below and testing error approaching it from above.
 * Look at the learning curves for the decision tree regressor with max depth 1 and 10 (first and last learning curve graphs). When the model is fully trained does it suffer from either high bias/underfitting or high variance/overfitting?
 * Look at the model complexity graph. How do the training and test error relate to increasing model complexity? Based on this relationship, which model (max depth) best generalizes the dataset and why?
 

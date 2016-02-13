@@ -7,3 +7,4 @@ The Boston housing market is highly competitive, and you want to be the best rea
 Deliverables:
 * [code](./src/boston_housing.py) 
 * [report](./doc/boston_housing.md)
+* [report (pdf version)](./doc/boston_housing.pdf)

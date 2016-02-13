@@ -31,6 +31,7 @@
 * Look at all learning curve graphs provided. What is the general trend of training and testing error as training size increases?
     - In general, as training size increases, training error increases and testing error decreases.  They both approach the same horizontal asymptote with training error approaching the asymptote from below and testing error approaching it from above.
 * Look at the learning curves for the decision tree regressor with max depth 1 and 10 (first and last learning curve graphs). When the model is fully trained does it suffer from either high bias/underfitting or high variance/overfitting?
+    - For the decision tree with max depth of 10, there is clear high variance/overfitting.  You can see this because the training error is quite low (close to 0 for a training size of 350), while the testing error is relatively high (about 3.5 for a training size of 350).  It is less clear what is happening with the decision tree with max depth of 1.  With a training size of 350, both the testing error and the training error are approaching about 5.5.  Comparing this to a testing error of 3.5 with the decision tree with max depth of 10, this is *perhaps* indicative of high bias/underfitting, but it's not conclusive.
 * Look at the model complexity graph. How do the training and test error relate to increasing model complexity? Based on this relationship, which model (max depth) best generalizes the dataset and why?
 
 ## 4) Model Prediction

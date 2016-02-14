@@ -10,6 +10,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn import metrics
 from sklearn.metrics import make_scorer
 from sklearn import grid_search
+from sklearn.neighbors import NearestNeighbors
 
 def load_data():
     """Load the Boston dataset."""
@@ -161,7 +162,7 @@ def fit_predict_model(city_data):
     # 1. Find an appropriate performance metric. This should be the same as the
     # one used in your performance_metric procedure above:
     # http://scikit-learn.org/stable/modules/generated/sklearn.metrics.make_scorer.html
-    mean_absolute_error_scorer = make_scorer(metrics.mean_absolute_error)
+    mean_absolute_error_scorer = make_scorer(metrics.mean_absolute_error, greater_is_better=False)
 
     # 2. We will use grid search to fine tune the Decision Tree Regressor and
     # obtain the parameters that generate the best training performance. Set up
@@ -180,6 +181,19 @@ def fit_predict_model(city_data):
     y = reg.predict(x)
     print "House: " + str(x)
     print "Prediction: " + str(y)
+    
+    def find_nearest_neighbor_indexes(x, X):  # x is my vector and X is the data set.
+       neigh = NearestNeighbors(n_neighbors = 10)
+       neigh.fit(X)
+       distance, indexes = neigh.kneighbors(x)
+       return indexes
+    
+    indexes = find_nearest_neighbor_indexes(x, X)
+    sum_prices = []
+    for i in indexes:
+        sum_prices.append(city_data.target[i])
+    neighbor_avg = np.mean(sum_prices)
+    print "Nearest Neighbors average: " + str(neighbor_avg)
 
 def main():
     """Analyze the Boston housing data. Evaluate and validate the
